@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @prescription = Prescription.new
     @event = Event.find(params[:id])
 
     render("events/show.html.erb")
