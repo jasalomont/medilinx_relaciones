@@ -1,5 +1,7 @@
 ActiveAdmin.register Rx do
 
+ permit_params :prescription_id, :drug, :dose, :quantity, :units, :details, :time_spread, :time_spread_unit
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
