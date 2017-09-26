@@ -18,10 +18,34 @@
 
       <% @prescriptions.each do |prescription| %>
       <tr>
-        <td><%= prescription.doctor.email %></td>
-        <td><%= prescription.patient.email %></td>
-        <td><%= prescription.event.created_at %></td>
-        <td><%= prescription.insurer.email %></td>
+        <td>
+          <% if prescription.doctor.present? %>
+            <a href="/doctors/<%= prescription.doctor.id %>">
+              <%= prescription.doctor.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if prescription.patient.present? %>
+            <a href="/patients/<%= prescription.patient.id %>">
+              <%= prescription.patient.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if prescription.event.present? %>
+            <a href="/events/<%= prescription.event.id %>">
+              <%= prescription.event.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if prescription.insurer.present? %>
+            <a href="/insurers/<%= prescription.insurer.id %>">
+              <%= prescription.insurer.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/prescriptions/<%= prescription.id %>" class="btn btn-primary">Show</a>
           

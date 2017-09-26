@@ -33,7 +33,13 @@
       <dd><%= @broker_profile.company %></dd>
 
       <dt>Insurer</dt>
-      <dd><%= @broker_profile.insurer_id %></dd>
+      <dd>
+        <% if @broker_profile.inusrer.present? %>
+          <a href="/insurers/<%= @broker_profile.insurer_id %>">
+            <%= @broker_profile.inusrer.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Photo</dt>
       <dd><img src="<%= @broker_profile.photo %>" class="img-responsive"></dd>

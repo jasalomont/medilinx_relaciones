@@ -6,16 +6,40 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Doctor</dt>
-      <dd><%= @prescription.doctor_id %></dd>
+      <dd>
+        <% if @prescription.doctor.present? %>
+          <a href="/doctors/<%= @prescription.doctor_id %>">
+            <%= @prescription.doctor.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Patient</dt>
-      <dd><%= @prescription.patient_id %></dd>
+      <dd>
+        <% if @prescription.patient.present? %>
+          <a href="/patients/<%= @prescription.patient_id %>">
+            <%= @prescription.patient.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Event</dt>
-      <dd><%= @prescription.event_id %></dd>
+      <dd>
+        <% if @prescription.event.present? %>
+          <a href="/events/<%= @prescription.event_id %>">
+            <%= @prescription.event.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Insurer</dt>
-      <dd><%= @prescription.insurer_id %></dd>
+      <dd>
+        <% if @prescription.insurer.present? %>
+          <a href="/insurers/<%= @prescription.insurer_id %>">
+            <%= @prescription.insurer.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

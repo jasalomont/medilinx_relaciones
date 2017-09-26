@@ -18,8 +18,20 @@
 
       <% @broker_relations.each do |broker_relation| %>
       <tr>
-        <td><%= broker_relation.patient.email %></td>
-        <td><%= broker_relation.insurer.email %></td>
+        <td>
+          <% if broker_relation.patient.present? %>
+            <a href="/patients/<%= broker_relation.patient.id %>">
+              <%= broker_relation.patient.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if broker_relation.insurer.present? %>
+            <a href="/insurers/<%= broker_relation.insurer.id %>">
+              <%= broker_relation.insurer.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= broker_relation.insurance_company %></td>
         <td><%= broker_relation.permission %></td>
         <td>
