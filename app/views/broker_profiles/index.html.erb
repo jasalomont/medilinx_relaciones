@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>
+    Broker profiles
+    <a href="/broker_profiles/new" class="btn btn-lg btn-success">New Broker profile</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Phone work</th>
+        <th>Address work</th>
+        <th>City work</th>
+        <th>Zip work</th>
+        <th>State work</th>
+        <th>Country work</th>
+        <th>Phone mobile</th>
+        <th>Practice name</th>
+        <th>Company</th>
+        <th>Insurer</th>
+        <th>Photo</th>
+        <th>Job title</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @broker_profiles.each do |broker_profile| %>
+      <tr>
+        <td><%= broker_profile.phone_work %></td>
+        <td><%= broker_profile.address_work %></td>
+        <td><%= broker_profile.city_work %></td>
+        <td><%= broker_profile.zip_work %></td>
+        <td><%= broker_profile.state_work %></td>
+        <td><%= broker_profile.country_work %></td>
+        <td><%= broker_profile.phone_mobile %></td>
+        <td><%= broker_profile.practice_name %></td>
+        <td><%= broker_profile.company %></td>
+        <td><%= broker_profile.insurer_id %></td>
+        <td><%= broker_profile.photo %></td>
+        <td><%= broker_profile.job_title %></td>
+        <td>
+          <a href="/broker_profiles/<%= broker_profile.id %>" class="btn btn-primary">Show</a>
+          <a href="/broker_profiles/<%= broker_profile.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_broker_profile/<%= broker_profile.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

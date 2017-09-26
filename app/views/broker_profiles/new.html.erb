@@ -1,0 +1,136 @@
+<!-- Validation failure messages -->
+<% if @broker_profile.errors.any? %>
+  <% @broker_profile.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Broker Profile</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_broker_profile" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for phone_work -->
+      <div class="form-group">
+        <label for="phone_work" class="control-label">
+          Phone work
+        </label>
+
+        <input type="text" id="phone_work" name="phone_work" placeholder="Phone work" class="form-control" value="<%= @broker_profile.phone_work %>">
+      </div>
+
+      <!-- Label and input for address_work -->
+      <div class="form-group">
+        <label for="address_work" class="control-label">
+          Address work
+        </label>
+
+        <input type="text" id="address_work" name="address_work" placeholder="Address work" class="form-control" value="<%= @broker_profile.address_work %>">
+      </div>
+
+      <!-- Label and input for city_work -->
+      <div class="form-group">
+        <label for="city_work" class="control-label">
+          City work
+        </label>
+
+        <input type="text" id="city_work" name="city_work" placeholder="City work" class="form-control" value="<%= @broker_profile.city_work %>">
+      </div>
+
+      <!-- Label and input for zip_work -->
+      <div class="form-group">
+        <label for="zip_work" class="control-label">
+          Zip work
+        </label>
+
+        <input type="text" id="zip_work" name="zip_work" placeholder="Zip work" class="form-control" value="<%= @broker_profile.zip_work %>">
+      </div>
+
+      <!-- Label and input for state_work -->
+      <div class="form-group">
+        <label for="state_work" class="control-label">
+          State work
+        </label>
+
+        <input type="text" id="state_work" name="state_work" placeholder="State work" class="form-control" value="<%= @broker_profile.state_work %>">
+      </div>
+
+      <!-- Label and input for country_work -->
+      <div class="form-group">
+        <label for="country_work" class="control-label">
+          Country work
+        </label>
+
+        <input type="text" id="country_work" name="country_work" placeholder="Country work" class="form-control" value="<%= @broker_profile.country_work %>">
+      </div>
+
+      <!-- Label and input for phone_mobile -->
+      <div class="form-group">
+        <label for="phone_mobile" class="control-label">
+          Phone mobile
+        </label>
+
+        <input type="text" id="phone_mobile" name="phone_mobile" placeholder="Phone mobile" class="form-control" value="<%= @broker_profile.phone_mobile %>">
+      </div>
+
+      <!-- Label and input for practice_name -->
+      <div class="form-group">
+        <label for="practice_name" class="control-label">
+          Practice name
+        </label>
+
+        <input type="text" id="practice_name" name="practice_name" placeholder="Practice name" class="form-control" value="<%= @broker_profile.practice_name %>">
+      </div>
+
+      <!-- Label and input for company -->
+      <div class="form-group">
+        <label for="company" class="control-label">
+          Company
+        </label>
+
+        <input type="text" id="company" name="company" placeholder="Company" class="form-control" value="<%= @broker_profile.company %>">
+      </div>
+
+      <!-- Label and input for insurer_id -->
+      <div class="form-group">
+        <label for="insurer_id" class="control-label">
+          Insurer
+        </label>
+
+        <input type="text" id="insurer_id" name="insurer_id" placeholder="Insurer" class="form-control" value="<%= @broker_profile.insurer_id %>">
+      </div>
+
+      <!-- Label and input for photo -->
+      <div class="form-group">
+        <label for="photo" class="control-label">
+          Photo
+        </label>
+
+        <input type="text" id="photo" name="photo" placeholder="Photo" class="form-control" value="<%= @broker_profile.photo %>">
+      </div>
+
+      <!-- Label and input for job_title -->
+      <div class="form-group">
+        <label for="job_title" class="control-label">
+          Job title
+        </label>
+
+        <input type="text" id="job_title" name="job_title" placeholder="Job title" class="form-control" value="<%= @broker_profile.job_title %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Broker Profile
+      </button>
+      or
+      <a href="/broker_profiles">Cancel</a>
+    </form>
+  </div>
+</div>

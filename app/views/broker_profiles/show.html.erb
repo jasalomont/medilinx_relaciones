@@ -1,0 +1,58 @@
+<div class="page-header">
+  <h3>Broker Profile #<%= @broker_profile.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Phone work</dt>
+      <dd><%= @broker_profile.phone_work %></dd>
+
+      <dt>Address work</dt>
+      <dd><%= @broker_profile.address_work %></dd>
+
+      <dt>City work</dt>
+      <dd><%= @broker_profile.city_work %></dd>
+
+      <dt>Zip work</dt>
+      <dd><%= @broker_profile.zip_work %></dd>
+
+      <dt>State work</dt>
+      <dd><%= @broker_profile.state_work %></dd>
+
+      <dt>Country work</dt>
+      <dd><%= @broker_profile.country_work %></dd>
+
+      <dt>Phone mobile</dt>
+      <dd><%= @broker_profile.phone_mobile %></dd>
+
+      <dt>Practice name</dt>
+      <dd><%= @broker_profile.practice_name %></dd>
+
+      <dt>Company</dt>
+      <dd><%= @broker_profile.company %></dd>
+
+      <dt>Insurer</dt>
+      <dd><%= @broker_profile.insurer_id %></dd>
+
+      <dt>Photo</dt>
+      <dd><%= @broker_profile.photo %></dd>
+
+      <dt>Job title</dt>
+      <dd><%= @broker_profile.job_title %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/broker_profiles" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/broker_profiles/<%= @broker_profile.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_broker_profile/<%= @broker_profile.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
