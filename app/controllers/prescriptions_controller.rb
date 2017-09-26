@@ -10,7 +10,8 @@ class PrescriptionsController < ApplicationController
   end
 
   def index
-    @prescriptions = Prescription.page(params[:page]).per(10)
+    @q = Prescription.ransack(params[:q])
+    @prescriptions = @q.result(:distinct => true).includes(:doctor, :patient, :event, :insurer).page(params[:page]).per(10)
 
     render("prescriptions/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.page(params[:page]).per(10)
+    @q = Event.ransack(params[:q])
+    @events = @q.result(:distinct => true).includes(:prescriptions).page(params[:page]).per(10)
 
     render("events/index.html.erb")
   end

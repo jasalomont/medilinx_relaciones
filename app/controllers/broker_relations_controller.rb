@@ -1,6 +1,7 @@
 class BrokerRelationsController < ApplicationController
   def index
-    @broker_relations = BrokerRelation.page(params[:page]).per(10)
+    @q = BrokerRelation.ransack(params[:q])
+    @broker_relations = @q.result(:distinct => true).includes(:patient, :insurer).page(params[:page]).per(10)
 
     render("broker_relations/index.html.erb")
   end

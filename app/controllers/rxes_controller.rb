@@ -1,6 +1,7 @@
 class RxesController < ApplicationController
   def index
-    @rxes = Rx.page(params[:page]).per(10)
+    @q = Rx.ransack(params[:q])
+    @rxes = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("rxes/index.html.erb")
   end

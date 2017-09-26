@@ -1,6 +1,7 @@
 class BrokerProfilesController < ApplicationController
   def index
-    @broker_profiles = BrokerProfile.page(params[:page]).per(10)
+    @q = BrokerProfile.ransack(params[:q])
+    @broker_profiles = @q.result(:distinct => true).includes(:inusrer).page(params[:page]).per(10)
 
     render("broker_profiles/index.html.erb")
   end
