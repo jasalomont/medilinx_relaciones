@@ -1,6 +1,9 @@
 class Insurer < ApplicationRecord
   # Direct associations
 
+  has_many   :broker_insurers,
+             :dependent => :destroy
+
   has_many   :broker_profiles,
              :dependent => :destroy
 
