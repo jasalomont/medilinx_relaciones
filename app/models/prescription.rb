@@ -1,6 +1,9 @@
 class Prescription < ApplicationRecord
   # Direct associations
 
+  belongs_to :insurer,
+             :required => false
+
   belongs_to :event,
              :required => false
 
