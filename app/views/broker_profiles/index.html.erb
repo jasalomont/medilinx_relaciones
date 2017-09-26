@@ -36,7 +36,7 @@
         <td><%= broker_profile.practice_name %></td>
         <td><%= broker_profile.company %></td>
         <td><%= broker_profile.inusrer.email %></td>
-        <td><%= broker_profile.photo %></td>
+        <td><img src='<%= broker_profile.photo %>' class='img-responsive'></td>
         <td><%= broker_profile.job_title %></td>
         <td>
           <a href="/broker_profiles/<%= broker_profile.id %>" class="btn btn-primary">Show</a>
