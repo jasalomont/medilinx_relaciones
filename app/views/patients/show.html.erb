@@ -20,3 +20,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Patient has many prescriptions -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Prescriptions
+      </li>
+
+      <% @patient.prescriptions.each do |prescription| %>
+        <li class="list-group-item">
+          <a href="/prescriptions/<%= prescription.id %>">
+            <%= prescription.doctor_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/prescriptions/<%= prescription.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/prescriptions/<%= prescription.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_prescription/<%= prescription.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Patient has many broker_relations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Broker Relations
+      </li>
+
+      <% @patient.broker_relations.each do |broker_relation| %>
+        <li class="list-group-item">
+          <a href="/broker_relations/<%= broker_relation.id %>">
+            <%= broker_relation.patient_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/broker_relations/<%= broker_relation.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/broker_relations/<%= broker_relation.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_broker_relation/<%= broker_relation.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
