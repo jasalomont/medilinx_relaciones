@@ -18,7 +18,7 @@
 
       <% @prescriptions.each do |prescription| %>
       <tr>
-        <td><%= prescription.doctor_id %></td>
+        <td><%= prescription.doctor.email %></td>
         <td><%= prescription.patient_id %></td>
         <td><%= prescription.event_id %></td>
         <td><%= prescription.insurer_id %></td>
