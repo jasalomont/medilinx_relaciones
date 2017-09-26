@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :insurers
+  # Routes for the Insurer resource:
+  # READ
+  get "/insurers", :controller => "insurers", :action => "index"
+  get "/insurers/:id", :controller => "insurers", :action => "show"
+
+
   # Routes for the Event resource:
   # CREATE
   get "/events/new", :controller => "events", :action => "new"
