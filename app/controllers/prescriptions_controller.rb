@@ -1,4 +1,14 @@
 class PrescriptionsController < ApplicationController
+  before_action :current_user_must_be_prescription_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_prescription_doctor
+    prescription = Prescription.find(params[:id])
+
+    unless current_user == prescription.doctor
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @prescriptions = Prescription.all
 
