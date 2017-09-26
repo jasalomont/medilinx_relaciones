@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @prescription.errors.any? %>
+  <% @prescription.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Prescription #<%= @prescription.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_prescription/<%= @prescription.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for doctor_id -->
+      <div class="form-group">
+        <label for="doctor_id" class="control-label">
+          Doctor
+        </label>
+
+        <input type="text" id="doctor_id" name="doctor_id" placeholder="Doctor" class="form-control" value="<%= @prescription.doctor_id %>">
+      </div>
+
+      <!-- Label and input for patient_id -->
+      <div class="form-group">
+        <label for="patient_id" class="control-label">
+          Patient
+        </label>
+
+        <input type="text" id="patient_id" name="patient_id" placeholder="Patient" class="form-control" value="<%= @prescription.patient_id %>">
+      </div>
+
+      <!-- Label and input for event_id -->
+      <div class="form-group">
+        <label for="event_id" class="control-label">
+          Event
+        </label>
+
+        <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @prescription.event_id %>">
+      </div>
+
+      <!-- Label and input for insurer_id -->
+      <div class="form-group">
+        <label for="insurer_id" class="control-label">
+          Insurer
+        </label>
+
+        <input type="text" id="insurer_id" name="insurer_id" placeholder="Insurer" class="form-control" value="<%= @prescription.insurer_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Prescription
+      </button>
+      or
+      <a href="/prescriptions/<%= @prescription.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Prescription #<%= @prescription.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Doctor</dt>
+      <dd><%= @prescription.doctor_id %></dd>
+
+      <dt>Patient</dt>
+      <dd><%= @prescription.patient_id %></dd>
+
+      <dt>Event</dt>
+      <dd><%= @prescription.event_id %></dd>
+
+      <dt>Insurer</dt>
+      <dd><%= @prescription.insurer_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/prescriptions" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/prescriptions/<%= @prescription.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_prescription/<%= @prescription.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
