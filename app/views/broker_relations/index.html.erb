@@ -18,7 +18,7 @@
 
       <% @broker_relations.each do |broker_relation| %>
       <tr>
-        <td><%= broker_relation.patient_id %></td>
+        <td><%= broker_relation.patient.email %></td>
         <td><%= broker_relation.insurer_id %></td>
         <td><%= broker_relation.insurance_company %></td>
         <td><%= broker_relation.permission %></td>
