@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @broker_insurer.errors.any? %>
+  <% @broker_insurer.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Broker Insurer</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_broker_insurer" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for insurer_id -->
+      <div class="form-group">
+        <label for="insurer_id" class="control-label">
+          Insurer
+        </label>
+
+        <input type="text" id="insurer_id" name="insurer_id" placeholder="Insurer" class="form-control" value="<%= @broker_insurer.insurer_id %>">
+      </div>
+
+      <!-- Label and input for company_name -->
+      <div class="form-group">
+        <label for="company_name" class="control-label">
+          Company name
+        </label>
+
+        <input type="text" id="company_name" name="company_name" placeholder="Company name" class="form-control" value="<%= @broker_insurer.company_name %>">
+      </div>
+
+      <!-- Label and input for relation_type -->
+      <div class="form-group">
+        <label for="relation_type" class="control-label">
+          Relation type
+        </label>
+
+        <input type="text" id="relation_type" name="relation_type" placeholder="Relation type" class="form-control" value="<%= @broker_insurer.relation_type %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Broker Insurer
+      </button>
+      or
+      <a href="/broker_insurers">Cancel</a>
+    </form>
+  </div>
+</div>

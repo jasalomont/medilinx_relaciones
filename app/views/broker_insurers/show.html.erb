@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Broker Insurer #<%= @broker_insurer.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Insurer</dt>
+      <dd><%= @broker_insurer.insurer_id %></dd>
+
+      <dt>Company name</dt>
+      <dd><%= @broker_insurer.company_name %></dd>
+
+      <dt>Relation type</dt>
+      <dd><%= @broker_insurer.relation_type %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/broker_insurers" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/broker_insurers/<%= @broker_insurer.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_broker_insurer/<%= @broker_insurer.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

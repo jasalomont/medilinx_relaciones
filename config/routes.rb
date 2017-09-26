@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Broker_insurer resource:
+  # CREATE
+  get "/broker_insurers/new", :controller => "broker_insurers", :action => "new"
+  post "/create_broker_insurer", :controller => "broker_insurers", :action => "create"
+
+  # READ
+  get "/broker_insurers", :controller => "broker_insurers", :action => "index"
+  get "/broker_insurers/:id", :controller => "broker_insurers", :action => "show"
+
+  # UPDATE
+  get "/broker_insurers/:id/edit", :controller => "broker_insurers", :action => "edit"
+  post "/update_broker_insurer/:id", :controller => "broker_insurers", :action => "update"
+
+  # DELETE
+  get "/delete_broker_insurer/:id", :controller => "broker_insurers", :action => "destroy"
+  #------------------------------
+
   # Routes for the Broker_profile resource:
   # CREATE
   get "/broker_profiles/new", :controller => "broker_profiles", :action => "new"

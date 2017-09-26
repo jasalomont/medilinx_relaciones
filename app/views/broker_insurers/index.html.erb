@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Broker insurers
+    <a href="/broker_insurers/new" class="btn btn-lg btn-success">New Broker insurer</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Insurer</th>
+        <th>Company name</th>
+        <th>Relation type</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @broker_insurers.each do |broker_insurer| %>
+      <tr>
+        <td><%= broker_insurer.insurer_id %></td>
+        <td><%= broker_insurer.company_name %></td>
+        <td><%= broker_insurer.relation_type %></td>
+        <td>
+          <a href="/broker_insurers/<%= broker_insurer.id %>" class="btn btn-primary">Show</a>
+          <a href="/broker_insurers/<%= broker_insurer.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_broker_insurer/<%= broker_insurer.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
