@@ -1,6 +1,6 @@
 class RxesController < ApplicationController
   def index
-    @rxes = Rx.all
+    @rxes = Rx.page(params[:page]).per(10)
 
     render("rxes/index.html.erb")
   end

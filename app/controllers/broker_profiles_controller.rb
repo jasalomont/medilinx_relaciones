@@ -1,6 +1,6 @@
 class BrokerProfilesController < ApplicationController
   def index
-    @broker_profiles = BrokerProfile.all
+    @broker_profiles = BrokerProfile.page(params[:page]).per(10)
 
     render("broker_profiles/index.html.erb")
   end

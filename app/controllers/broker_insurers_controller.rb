@@ -1,6 +1,6 @@
 class BrokerInsurersController < ApplicationController
   def index
-    @broker_insurers = BrokerInsurer.all
+    @broker_insurers = BrokerInsurer.page(params[:page]).per(10)
 
     render("broker_insurers/index.html.erb")
   end

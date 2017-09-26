@@ -1,6 +1,6 @@
 class InsurersController < ApplicationController
   def index
-    @insurers = Insurer.all
+    @insurers = Insurer.page(params[:page]).per(10)
   end
 
   def show
