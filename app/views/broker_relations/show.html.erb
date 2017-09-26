@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Broker Relation #<%= @broker_relation.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Patient</dt>
+      <dd><%= @broker_relation.patient_id %></dd>
+
+      <dt>Insurer</dt>
+      <dd><%= @broker_relation.insurer_id %></dd>
+
+      <dt>Insurance company</dt>
+      <dd><%= @broker_relation.insurance_company %></dd>
+
+      <dt>Permission</dt>
+      <dd><%= @broker_relation.permission %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/broker_relations" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/broker_relations/<%= @broker_relation.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_broker_relation/<%= @broker_relation.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

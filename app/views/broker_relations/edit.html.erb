@@ -1,0 +1,63 @@
+<!-- Validation failure messages -->
+<% if @broker_relation.errors.any? %>
+  <% @broker_relation.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Broker Relation #<%= @broker_relation.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_broker_relation/<%= @broker_relation.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for patient_id -->
+      <div class="form-group">
+        <label for="patient_id" class="control-label">
+          Patient
+        </label>
+
+        <input type="text" id="patient_id" name="patient_id" placeholder="Patient" class="form-control" value="<%= @broker_relation.patient_id %>">
+      </div>
+
+      <!-- Label and input for insurer_id -->
+      <div class="form-group">
+        <label for="insurer_id" class="control-label">
+          Insurer
+        </label>
+
+        <input type="text" id="insurer_id" name="insurer_id" placeholder="Insurer" class="form-control" value="<%= @broker_relation.insurer_id %>">
+      </div>
+
+      <!-- Label and input for insurance_company -->
+      <div class="form-group">
+        <label for="insurance_company" class="control-label">
+          Insurance company
+        </label>
+
+        <input type="text" id="insurance_company" name="insurance_company" placeholder="Insurance company" class="form-control" value="<%= @broker_relation.insurance_company %>">
+      </div>
+
+      <!-- Label and input for permission -->
+      <div class="checkbox">
+        <label for="permission">
+          <input type="checkbox" id="permission" name="permission" value="1" <%= "checked" if @broker_relation.permission %>>
+          Permission
+        </label>
+      </div>
+
+      <button class="btn btn-warning">
+        Update Broker Relation
+      </button>
+      or
+      <a href="/broker_relations/<%= @broker_relation.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
