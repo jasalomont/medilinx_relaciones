@@ -1,5 +1,7 @@
 ActiveAdmin.register BrokerRelation do
 
+ permit_params :patient_id, :insurer_id, :insurance_company, :permission
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
