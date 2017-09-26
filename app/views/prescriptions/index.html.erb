@@ -20,7 +20,7 @@
       <tr>
         <td><%= prescription.doctor.email %></td>
         <td><%= prescription.patient.email %></td>
-        <td><%= prescription.event_id %></td>
+        <td><%= prescription.event.created_at %></td>
         <td><%= prescription.insurer_id %></td>
         <td>
           <a href="/prescriptions/<%= prescription.id %>" class="btn btn-primary">Show</a>
