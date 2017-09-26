@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Rx #<%= @rx.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Prescription</dt>
+      <dd><%= @rx.prescription_id %></dd>
+
+      <dt>Drug</dt>
+      <dd><%= @rx.drug %></dd>
+
+      <dt>Dose</dt>
+      <dd><%= @rx.dose %></dd>
+
+      <dt>Quantity</dt>
+      <dd><%= @rx.quantity %></dd>
+
+      <dt>Units</dt>
+      <dd><%= @rx.units %></dd>
+
+      <dt>Details</dt>
+      <dd><%= @rx.details %></dd>
+
+      <dt>Time spread</dt>
+      <dd><%= @rx.time_spread %></dd>
+
+      <dt>Time spread unit</dt>
+      <dd><%= @rx.time_spread_unit %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/rxes" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/rxes/<%= @rx.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_rx/<%= @rx.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

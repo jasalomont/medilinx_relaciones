@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @rx.errors.any? %>
+  <% @rx.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Rx</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_rx" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for prescription_id -->
+      <div class="form-group">
+        <label for="prescription_id" class="control-label">
+          Prescription
+        </label>
+
+        <input type="text" id="prescription_id" name="prescription_id" placeholder="Prescription" class="form-control" value="<%= @rx.prescription_id %>">
+      </div>
+
+      <!-- Label and input for drug -->
+      <div class="form-group">
+        <label for="drug" class="control-label">
+          Drug
+        </label>
+
+        <input type="text" id="drug" name="drug" placeholder="Drug" class="form-control" value="<%= @rx.drug %>">
+      </div>
+
+      <!-- Label and input for dose -->
+      <div class="form-group">
+        <label for="dose" class="control-label">
+          Dose
+        </label>
+
+        <input type="text" id="dose" name="dose" placeholder="Dose" class="form-control" value="<%= @rx.dose %>">
+      </div>
+
+      <!-- Label and input for quantity -->
+      <div class="form-group">
+        <label for="quantity" class="control-label">
+          Quantity
+        </label>
+
+        <input type="text" id="quantity" name="quantity" placeholder="Quantity" class="form-control" value="<%= @rx.quantity %>">
+      </div>
+
+      <!-- Label and input for units -->
+      <div class="form-group">
+        <label for="units" class="control-label">
+          Units
+        </label>
+
+        <input type="text" id="units" name="units" placeholder="Units" class="form-control" value="<%= @rx.units %>">
+      </div>
+
+      <!-- Label and input for details -->
+      <div class="form-group">
+        <label for="details" class="control-label">
+          Details
+        </label>
+
+        <textarea id="details" name="details" placeholder="Details" class="form-control" rows="3"><%= @rx.details %></textarea>
+      </div>
+
+      <!-- Label and input for time_spread -->
+      <div class="form-group">
+        <label for="time_spread" class="control-label">
+          Time spread
+        </label>
+
+        <input type="text" id="time_spread" name="time_spread" placeholder="Time spread" class="form-control" value="<%= @rx.time_spread %>">
+      </div>
+
+      <!-- Label and input for time_spread_unit -->
+      <div class="form-group">
+        <label for="time_spread_unit" class="control-label">
+          Time spread unit
+        </label>
+
+        <input type="text" id="time_spread_unit" name="time_spread_unit" placeholder="Time spread unit" class="form-control" value="<%= @rx.time_spread_unit %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Rx
+      </button>
+      or
+      <a href="/rxes">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Rx resource:
+  # CREATE
+  get "/rxes/new", :controller => "rxes", :action => "new"
+  post "/create_rx", :controller => "rxes", :action => "create"
+
+  # READ
+  get "/rxes", :controller => "rxes", :action => "index"
+  get "/rxes/:id", :controller => "rxes", :action => "show"
+
+  # UPDATE
+  get "/rxes/:id/edit", :controller => "rxes", :action => "edit"
+  post "/update_rx/:id", :controller => "rxes", :action => "update"
+
+  # DELETE
+  get "/delete_rx/:id", :controller => "rxes", :action => "destroy"
+  #------------------------------
+
   # Routes for the Prescription resource:
   # CREATE
   get "/prescriptions/new", :controller => "prescriptions", :action => "new"
