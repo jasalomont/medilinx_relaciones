@@ -1,5 +1,7 @@
 ActiveAdmin.register BrokerProfile do
 
+ permit_params :phone_work, :address_work, :city_work, :zip_work, :state_work, :country_work, :phone_mobile, :practice_name, :company, :insurer_id, :photo, :job_title
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
