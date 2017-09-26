@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "events#index"
   # Routes for the Broker_insurer resource:
   # CREATE
   get "/broker_insurers/new", :controller => "broker_insurers", :action => "new"
