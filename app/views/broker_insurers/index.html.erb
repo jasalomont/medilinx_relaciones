@@ -17,7 +17,7 @@
 
       <% @broker_insurers.each do |broker_insurer| %>
       <tr>
-        <td><%= broker_insurer.insurer_id %></td>
+        <td><%= broker_insurer.insurer.email %></td>
         <td><%= broker_insurer.company_name %></td>
         <td><%= broker_insurer.relation_type %></td>
         <td>
