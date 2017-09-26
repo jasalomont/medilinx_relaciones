@@ -1,5 +1,7 @@
 ActiveAdmin.register BrokerInsurer do
 
+ permit_params :insurer_id, :company_name, :relation_type
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
