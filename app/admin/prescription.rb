@@ -1,5 +1,7 @@
 ActiveAdmin.register Prescription do
 
+ permit_params :doctor_id, :patient_id, :event_id, :insurer_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
