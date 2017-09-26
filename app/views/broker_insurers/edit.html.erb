@@ -24,7 +24,7 @@
           Insurer
         </label>
 
-        <input type="text" id="insurer_id" name="insurer_id" placeholder="Insurer" class="form-control" value="<%= @broker_insurer.insurer_id %>">
+        <%= select_tag(:insurer_id, options_from_collection_for_select(Insurer.all, :id, :email, @broker_insurer.insurer_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for company_name -->
